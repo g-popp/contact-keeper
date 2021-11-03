@@ -1,6 +1,12 @@
 const express = require('express');
+const connectDB = require('./config/db');
+
+const { stdout } = process;
 
 const app = express();
+
+// Connect Database
+connectDB();
 
 app.get('/', (req, res) =>
 	res.json({ msg: 'Welcome to the ContactKeeper API' })
@@ -13,4 +19,4 @@ app.use('/api/contacts', require('./routes/contacts'));
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => stdout.write(`Server started on port ${PORT}\n`));
