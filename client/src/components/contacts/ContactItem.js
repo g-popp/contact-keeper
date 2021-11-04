@@ -1,4 +1,3 @@
-// import ContactContext from '../../context/contact/contactContext';
 import PropTypes from 'prop-types';
 
 const ContactItem = ({ contact }) => {
